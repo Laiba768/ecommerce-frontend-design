@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce Site</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/home-page.css">
+    <link rel="stylesheet" href="CSS/product-listing-page.css">
+    <link rel="stylesheet" href="CSS/products-details.css">
 
 </head>
 
@@ -16,19 +18,23 @@
         <div class="navbar">
             <!-- logo -->
             <div class="logo">
-                <img src="images/logo-colored.png" alt="">
+                <a href="home-page.html">
+                    <img src="images/logo-colored.png" alt="">
+                </a>
             </div>
             <!-- search bar -->
             <div class="search-container">
                 <input type="text" placeholder="Search products..." class="search-input">
 
-                <select class="category-dropdown">
-                    <option>All Categories</option>
-                    <option>Electronics</option>
-                    <option>Clothing</option>
-                    <option>Books</option>
+                <select class="category-dropdown" id="categorySelect">
+                    <option value="">All Categories</option>
+                    <option value="mobile">Mobile</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="headphones">Headphones</option>
+                    <option value="camera">Camera</option>
                 </select>
-                <button class="search-btn">Search</button>
+
+                <button class="search-btn" id="searchBtn">Search</button>
             </div>
             <!-- icons -->
             <div class="header-icons">
@@ -47,9 +53,9 @@
                     <span>Orders</span>
                 </div>
 
-                <div class="icon-box">
+                <div class="icon-box" id="cart-icon">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span>My Cart</span>
+                    <span>My Cart (<span id="cart-count">0</span>)</span>
                 </div>
             </div>
         </div>
@@ -58,7 +64,11 @@
     <section class="sub-navbar">
         <div class="categories-list">
             <ul>
-                <li><i class="fa-solid fa-bars"></i> All category</li>
+                <li>
+                    <a href="product-listing-page.html">
+                        <i class="fa-solid fa-bars"></i> All category
+                    </a>
+                </li>
                 <li>Hot offers</li>
                 <li>Gift boxes</li>
                 <li>Projects</li>
@@ -232,13 +242,13 @@
             <div class="product-box">
                 <h4>Blenders</h4>
                 <p>From <br> USD 39</p>
-                <img src="images/tech/5.jpg" alt="">
+                <img src="images/interior/8.jpg" alt="">
             </div>
 
             <div class="product-box">
                 <h4>Soft chairs</h4>
                 <p>From <br> USD 19</p>
-                <img src="images/tech/8.jpg" alt="">
+                <img src="images/interior/7.jpg" alt="">
             </div>
 
 
@@ -246,25 +256,25 @@
             <div class="product-box">
                 <h4>Kitchen dishes</h4>
                 <p>From <br> USD 19</p>
-                <img src="images/tech/6.jpg" alt="">
+                <img src="images/interior/6.jpg" alt="">
             </div>
 
             <div class="product-box">
                 <h4>Smart watches</h4>
                 <p>From <br> USD 19</p>
-                <img src="images/tech/4.jpg" alt="">
+                <img src="images/interior/5.jpg" alt="">
             </div>
 
             <div class="product-box">
                 <h4>Sofa & chair</h4>
                 <p>From <br> USD 19</p>
-                <img src="images/tech/3.jpg" alt="">
+                <img src="images/interior/4.jpg" alt="">
             </div>
 
             <div class="product-box">
                 <h4>Kitchen mixer</h4>
                 <p>From <br> USD 100</p>
-                <img src="images/tech/2.jpg" alt="">
+                <img src="images/interior/3.jpg" alt="">
             </div>
 
 
@@ -272,13 +282,13 @@
             <div class="product-box">
                 <h4>Home appliance</h4>
                 <p>From <br> USD 19</p>
-                <img src="images/tech/1.jpg" alt="">
+                <img src="images/interior/2.jpg" alt="">
             </div>
 
             <div class="product-box">
                 <h4>Coffee maker</h4>
                 <p>From <br> USD 10</p>
-                <img src="images/tech/7.jpg" alt="">
+                <img src="images/interior/1.jpg" alt="">
             </div>
 
         </div>
@@ -309,61 +319,86 @@
             </div>
         </div>
     </section>
-
-    <!-- ************************* Recomended products********** -->
     <section class="recommendedproducts">
         <h3 class="Recommended">Recommended Items</h3>
+
         <div class="products1">
-            <div class="cards">
+
+            <!-- Product 1 -->
+            <div class="cards" data-id="1" data-name="T-shirt Multi Color" data-price="10.30"
+                data-image="images/cloth/2.jpg">
                 <img src="images/cloth/2.jpg" alt="">
-                <p id="price">$10.30</p>
-                <p id="info">T-shirts with multiple colors, for men</p>
+                <p class="price">$10.30</p>
+                <p class="info">T-shirts with multiple colors, for men</p>
             </div>
-            <div class="cards">
+
+            <!-- Product 2 -->
+            <div class="cards" data-id="2" data-name="Casual Shirt" data-price="15.00" data-image="images/cloth/3.jpg">
                 <img src="images/cloth/3.jpg" alt="">
-                <p id="price">$10.30</p>
-                <p id="info">T-shirts with multiple colors, for men</p>
+                <p class="price">$15.00</p>
+                <p class="info">Casual stylish shirt for men</p>
             </div>
-            <div class="cards">
+
+            <!-- Product 3 -->
+            <div class="cards" data-id="3" data-name="Men Jacket" data-price="25.00" data-image="images/cloth/4.jpg">
                 <img src="images/cloth/4.jpg" alt="">
-                <p id="price">$10.30</p>
-                <p id="info">T-shirts with multiple colors, for men</p>
+                <p class="price">$25.00</p>
+                <p class="info">Winter jacket premium quality</p>
             </div>
-            <div class="cards">
+
+            <!-- Product 4 -->
+            <div class="cards" data-id="4" data-name="Fashion Hoodie" data-price="30.00"
+                data-image="images/cloth/5.jpg">
                 <img src="images/cloth/5.jpg" alt="">
-                <p id="price">$10.30</p>
-                <p id="info">T-shirts with multiple colors, for men</p>
+                <p class="price">$30.00</p>
+                <p class="info">Comfortable hoodie for winter</p>
             </div>
-            <div class="cards">
+
+            <!-- Product 5 -->
+            <div class="cards" data-id="5" data-name="Denim Shirt" data-price="18.00" data-image="images/cloth/6.jpg">
                 <img src="images/cloth/6.jpg" alt="">
-                <p id="price">$10.30</p>
-                <p id="info">T-shirts with multiple colors, for men</p>
+                <p class="price">$18.00</p>
+                <p class="info">Denim shirt slim fit</p>
             </div>
-            <div class="cards">
+
+            <!-- Product 6 -->
+            <div class="cards" data-id="6" data-name="Printed T-shirt" data-price="12.00"
+                data-image="images/cloth/2.jpg">
                 <img src="images/cloth/2.jpg" alt="">
-                <p id="price">$10.30</p>
-                <p id="info">T-shirts with multiple colors, for men</p>
+                <p class="price">$12.00</p>
+                <p class="info">Printed T-shirt for casual wear</p>
             </div>
-            <div class="cards">
+
+            <!-- Product 7 -->
+            <div class="cards" data-id="7" data-name="Blue Jeans" data-price="22.00" data-image="images/cloth/7.jpg">
                 <img src="images/cloth/7.jpg" alt="">
-                <p id="price">$10.30</p>
-                <p id="info">T-shirts with multiple colors, for men</p>
+                <p class="price">$22.00</p>
+                <p class="info">Blue jeans premium quality</p>
             </div>
-            <div class="cards">
+
+            <!-- Product 8 -->
+            <div class="cards" data-id="8" data-name="Formal Shirt" data-price="20.00" data-image="images/cloth/2.jpg">
                 <img src="images/cloth/2.jpg" alt="">
-                <p id="price">$10.30</p>
-                <p id="info">T-shirts with multiple colors, for men</p>
+                <p class="price">$20.00</p>
+                <p class="info">Formal office wear shirt</p>
             </div>
-            <div class="cards">
+
+            <!-- Product 9 -->
+            <div class="cards" data-id="9" data-name="Leather Jacket" data-price="45.00"
+                data-image="images/cloth/2.jpg">
                 <img src="images/cloth/2.jpg" alt="">
-                <p id="price">$10.30</p>
-                <p id="info">T-shirts with multiple colors, for men</p>
+                <p class="price">$45.00</p>
+                <p class="info">Stylish leather jacket</p>
             </div>
-            <div class="cards">
+
+            <!-- Product 10 -->
+            <div class="cards" data-id="10" data-name="Summer Shirt" data-price="17.00" data-image="images/cloth/2.jpg">
                 <img src="images/cloth/2.jpg" alt="">
-                <p id="price">$10.30</p>
-                <p id="info">T-shirts with multiple colors, for men</p>
+                <p class="price">$17.00</p>
+                <p class="info">Light summer shirt</p>
             </div>
+
+
         </div>
     </section>
     <!-- ****************  Our Extra Services ********** -->
@@ -493,18 +528,18 @@
     </section>
     <!--******** ****************** subscribe******************-->
     <section class="subscribe-sec">
-    <h3>Subscribe on our newsletter</h3>
-    <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+        <h3>Subscribe on our newsletter</h3>
+        <p>Get daily news on upcoming offers from many suppliers all over the world</p>
 
-    <div class="mail">
-        <div class="email-box">
-            <i class="fa-regular fa-envelope"></i>
-            <input type="email" placeholder="Email">
+        <div class="mail">
+            <div class="email-box">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Email">
+            </div>
+
+            <button class="subscribe-btn">Subscribe</button>
         </div>
-
-        <button class="subscribe-btn">Subscribe</button>
-    </div>
-</section>
+    </section>
     <!--******** ****************** Foooter ******************-->
     <footer class="ftr">
         <div class="logoo">
@@ -573,6 +608,8 @@
             </div>
         </div>
     </footer>
+    <script src="javascript/script.js"></script>
+    <script src="javascript/product-details.js"></script>
 </body>
 
 </html>

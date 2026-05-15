@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
-
 }
 
 .navbar-container {
@@ -84,6 +83,10 @@
 
 .icon-box:hover {
   color: #0d6efd;
+}
+.categories-list ul li a {
+  text-decoration: none;
+  color: black;
 }
 
 /* ++++++++++++++++++   sub menu    +++++++++++++++++ */
@@ -532,221 +535,218 @@
 /* ++++++++++++++++++   Recommended items       +++++++++++++++++ */
 
 .recommendedproducts {
-    padding: 30px 60px;
-    background: #f7f7f7;
-}
-
-.Recommended {
-    margin-bottom: 20px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* 5 cards in one row */
-.products1 {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-}
-
-/* Individual cards */
-.cards {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.cards:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-}
-
-.cards img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    margin-bottom: 15px;
-}
-
-/* Price */
-#price {
-    font-weight: 700;
-    font-size: 18px;
-    color: black;
-    margin-bottom: 8px;
-}
-
-/* Product info */
-#info {
-    font-weight: 400;
-    font-size: 14px;
-    color: gray;
-    line-height: 1.4;
-}
-
-/* ************************* Our Extra Services ******************* */
-.extra-services{
   padding: 30px 60px;
   background: #f7f7f7;
 }
 
-.services-txt{
+.Recommended {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* 5 cards in one row */
+.products1 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* Individual cards */
+.cards {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cards img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* Price */
+#price {
+  font-weight: 700;
+  font-size: 18px;
+  color: black;
+  margin-bottom: 8px;
+}
+
+/* Product info */
+#info {
+  font-weight: 400;
+  font-size: 14px;
+  color: gray;
+  line-height: 1.4;
+}
+
+/* ************************* Our Extra Services ******************* */
+.extra-services {
+  padding: 30px 60px;
+  background: #f7f7f7;
+}
+
+.services-txt {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
-.services-cards{
+.services-cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-
 }
-.services-card{
+.services-card {
   position: relative;
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-
 }
-.services-card img{
+.services-card img {
   width: 100%;
   height: 120px;
   object-fit: cover;
 }
-.services-card p{
+.services-card p {
   padding: 15px;
   font-size: 14px;
   color: #222;
   line-height: 1.4;
 }
-.services-card i{
-    width:50px;
-    height:50px;
-    background:white;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#0d6efd;
-    position:absolute;
-    bottom:30px;
-    right:20px;
-    box-shadow:0px 2px 8px rgba(0,0,0,0.1);
+.services-card i {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0d6efd;
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 /* ***************  suppliers section **************** */
-.suppliers-section{
-    padding: 30px 60px;
-    background: #f7f7f7;
+.suppliers-section {
+  padding: 30px 60px;
+  background: #f7f7f7;
 }
 
 /* heading */
-.services-txt{
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+.services-txt {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 /* grid layout */
-.supplies{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+.supplies {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
 }
 
 /* single region */
-.region{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.region {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 /* flag */
-.region img{
-    width: 28px;
-    height: 20px;
-    object-fit: cover;
+.region img {
+  width: 28px;
+  height: 20px;
+  object-fit: cover;
 }
 
 /* text */
-.region-txt p{
-    font-size: 14px;
-    font-weight: 500;
-    color: #222;
+.region-txt p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
 }
 
-.region-txt span{
-    font-size: 12px;
-    color: gray;
+.region-txt span {
+  font-size: 12px;
+  color: gray;
 }
 /* ++++++++++++++++++  Subscribe    +++++++++++++++++ */
-.subscribe-sec{
-    background: #eff2f4;
-    text-align: center;
-    padding: 50px 20px;
+.subscribe-sec {
+  background: #eff2f4;
+  text-align: center;
+  padding: 50px 20px;
 }
 
-.subscribe-sec h3{
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 10px;
+.subscribe-sec h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-.subscribe-sec p{
-    color: gray;
-    font-size: 15px;
-    margin-bottom: 25px;
+.subscribe-sec p {
+  color: gray;
+  font-size: 15px;
+  margin-bottom: 25px;
 }
 
 /* input + button same row */
-.mail{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+.mail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 /* email input box */
-.email-box{
-    position: relative;
-    width: 280px;
+.email-box {
+  position: relative;
+  width: 280px;
 }
 
-.email-box i{
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: gray;
-    font-size: 14px;
+.email-box i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  font-size: 14px;
 }
 
-.email-box input{
-    width: 100%;
-    height: 40px;
-    padding-left: 35px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    outline: none;
+.email-box input {
+  width: 100%;
+  height: 40px;
+  padding-left: 35px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
 }
 
 /* subscribe button */
-.subscribe-btn{
-    background: #0d6efd;
-    color: white;
-    border: none;
-    padding: 11px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
+.subscribe-btn {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.subscribe-btn:hover{
-    background: #0056d2;
+.subscribe-btn:hover {
+  background: #0056d2;
 }
 /* ++++++++++++++++++   Footer     +++++++++++++++++ */
 

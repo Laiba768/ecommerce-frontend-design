@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Site | Product Listing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/home-page.css">
+    <link rel="stylesheet" href="CSS/product-listing-page.css">
+</head>
+
+<body>
+
+    <!-- ======================== NAVBAR ======================== -->
+    <nav class="navbar-container">
+        <div class="navbar">
+            <!-- Logo -->
+           <a href="home-page.html">
+                <img src="images/logo-colored.png" alt="">
+            </a>
+
+            <!-- Search Container with dropdown and button -->
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search products..." class="search-input">
+                <select id="category-dropdown" class="category-dropdown">
+                    <option value="all">All Categories</option>
+                    <option value="camera">Camera</option>
+                    <option value="headphones">Headphones</option>
+                    <option value="watch">Watch</option>
+                    <option value="laptop">Laptop</option>
+                </select>
+                <button id="search-btn" class="search-btn">Search</button>
+            </div>
+
+            <!-- Header Icons -->
+            <div class="header-icons">
+                <div class="icon-box"><i class="fa-solid fa-user"></i><span>Profile</span></div>
+                <div class="icon-box"><i class="fa-solid fa-message"></i><span>Message</span></div>
+                <div class="icon-box"><i class="fa-solid fa-heart"></i><span>Wishlist</span></div>
+                <div class="icon-box" id="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>My Cart (<span id="cart-count">0</span>)</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======================== SUB-NAVBAR (Categories) ======================== -->
+    <section class="sub-navbar">
+        <div class="categories-list">
+            <ul>
+                <li><i class="fa-solid fa-bars"></i> All category</li>
+                <li>Hot offers</li>
+                <li>Gift boxes</li>
+                <li>Projects</li>
+                <li>Menu Item</li>
+                <li>Help</li>
+            </ul>
+        </div>
+        <div class="right">
+            <div class="select-lang">
+                <h4>English, USD ^</h4>
+            </div>
+            <div class="Ship">
+                <h4>Ship to</h4>
+                <img src="images/a06cc39f316e46059ae904e8e3eb3ce29bd44599.png" alt="flag">
+                <h4>^</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== BREADCRUMB ======================== -->
+    <div class="breadcrumb">
+        Home > Electronics > Accessories > Product Listing
+    </div>
+
+    <!-- ======================== MAIN PRODUCT LISTING SECTION ======================== -->
+    <section class="product-listing-page">
+        <!-- LEFT SIDEBAR FILTERS -->
+        <div class="filter-sidebar">
+            <!-- Category Filters -->
+            <div class="sidebar-filter">
+                <h3>Category</h3>
+                <label><input type="checkbox" class="filter-checkbox" value="camera"> Camera</label>
+                <label><input type="checkbox" class="filter-checkbox" value="headphones"> Headphones</label>
+                <label><input type="checkbox" class="filter-checkbox" value="watch"> Watch</label>
+                <label><input type="checkbox" class="filter-checkbox" value="mobile"> Mobile</label>
+                <label><input type="checkbox" class="filter-checkbox" value="laptop"> Laptop</label>
+            </div>
+
+            <!-- Brands Filter -->
+            <div class="filter-box">
+                <h4>Brands</h4>
+                <label><input type="checkbox" class="brand-filter" value="canon"> Canon</label>
+                <label><input type="checkbox" class="brand-filter" value="gopro"> GoPro</label>
+                <label><input type="checkbox" class="brand-filter" value="apple"> Apple</label>
+                <label><input type="checkbox" class="brand-filter" value="samsung"> Samsung</label>
+                <label><input type="checkbox" class="brand-filter" value="huawei"> Huawei</label>
+            </div>
+
+            <!-- Features Filter -->
+            <div class="filter-box">
+                <h4>Features</h4>
+                <label><input type="checkbox"> Metallic</label>
+                <label><input type="checkbox"> Plastic cover</label>
+                <label><input type="checkbox"> Large Memory</label>
+                <label><input type="checkbox"> 8GB RAM</label>
+                <label><input type="checkbox"> Super Power</label>
+            </div>
+
+            <!-- Price Range Filter with Slider -->
+            <div class="filter-box">
+                <h4>Price Range</h4>
+                <input type="range" id="price-range" min="100" max="5000" value="2000">
+                <div class="price-range">
+                    <div>
+                        <p>Min</p>
+                        <input type="number" id="min-price" value="0" placeholder="0">
+                    </div>
+                    <div>
+                        <p>Max</p>
+                        <input type="number" id="max-price" value="2000" placeholder="5000">
+                    </div>
+                </div>
+                <button class="btn" id="apply-price">Apply</button>
+            </div>
+
+            <!-- Condition Filter -->
+            <div class="filter-box">
+                <h4>Condition</h4>
+                <label><input type="radio" name="condition"> Any</label>
+                <label><input type="radio" name="condition"> Refurbished</label>
+                <label><input type="radio" name="condition"> Brand New</label>
+                <label><input type="radio" name="condition"> Old Items</label>
+            </div>
+
+            <!-- Ratings Filter -->
+            <div class="filter-box">
+                <h4>Ratings</h4>
+                <label><img src="images/product-listing-page/Rating=Rating, Stars=stars-3.png" alt="3 stars"></label>
+                <label><img src="images/product-listing-page/Rating=Rating, Stars=stars-4.png" alt="4 stars"></label>
+                <label><img src="images/product-listing-page/Rating=Rating, Stars=stars-3.png" alt="3 stars"></label>
+                <label><img src="images/product-listing-page/Rating=Rating, Stars=stars-4.png" alt="4 stars"></label>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE PRODUCTS SECTION -->
+        <div class="products-section">
+            <!-- Top Bar: Item count + Sorting -->
+            <div class="product-top-bar">
+                <p><span id="item-count">12</span> items found</p>
+                <select id="sort-select">
+                    <option value="featured">Featured</option>
+                    <option value="low">Low Price</option>
+                    <option value="high">High Price</option>
+                </select>
+            </div>
+
+            <!-- Product Listing Grid -->
+            <section class="product-listing" id="product-listing">
+                <!-- Product 1 - MOBILE: Samsung Galaxy Phone -->
+                <div class="product-card" data-name="Samsung Galaxy S23" data-category="mobile" data-price="998"
+                    data-brand="samsung">
+                    <div class="product-image">
+                        <img src="images/tech/mobile.jpg" alt="Samsung Mobile">
+                    </div>
+                    <div class="product-info">
+                        <h3>Samsung Galaxy S23 5G - 256GB, Phantom Black</h3>
+                        <div class="price-row">
+                            <span class="new-price">$998.00</span>
+                            <span class="old-price">$1199.00</span>
+                        </div>
+                        <div class="rating-row">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i></div>
+                            <span class="rating-value">8.9</span><span class="dot">•</span><span class="orders">1,254
+                                orders</span><span class="dot">•</span><span class="shipping">Free Shipping</span>
+                        </div>
+                        <p class="product-desc">Latest flagship smartphone with 50MP camera, Snapdragon 8 Gen 2, and
+                            all-day battery life.</p>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="wishlist-box"><i class="fa-regular fa-heart"></i></div>
+                </div>
+
+                <!-- Product 2 - MOBILE: iPhone 15 Pro -->
+                <div class="product-card" data-name="iPhone 15 Pro" data-category="mobile" data-price="1099"
+                    data-brand="apple">
+                    <div class="product-image">
+                        <img src="images/tech/mobile2.jpg" alt="iPhone 15 Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3>Apple iPhone 15 Pro - 256GB, Titanium</h3>
+                        <div class="price-row"><span class="new-price">$1099.00</span><span
+                                class="old-price">$1299.00</span></div>
+                        <div class="rating-row">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i></div>
+                            <span class="rating-value">9.2</span><span class="dot">•</span><span class="orders">2,340
+                                orders</span><span class="dot">•</span><span class="shipping">Free Shipping</span>
+                        </div>
+                        <p class="product-desc">A17 Pro chip, 48MP main camera with 4K video, USB-C charging, and
+                            Dynamic Island.</p>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="wishlist-box"><i class="fa-regular fa-heart"></i></div>
+                </div>
+
+                <!-- Product 3 - MOBILE: Google Pixel 8 -->
+                <div class="product-card" data-name="Google Pixel 8" data-category="mobile" data-price="699"
+                    data-brand="google">
+                    <div class="product-image">
+                        <img src="images/tech/mobile3.jpg" alt="Google Pixel 8">
+                    </div>
+                    <div class="product-info">
+                        <h3>Google Pixel 8 - 128GB, Hazel</h3>
+                        <div class="price-row"><span class="new-price">$699.00</span><span
+                                class="old-price">$799.00</span></div>
+                        <div class="rating-row">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i></div>
+                            <span class="rating-value">8.7</span><span class="dot">•</span><span class="orders">890
+                                orders</span><span class="dot">•</span><span class="shipping">Free Shipping</span>
+                        </div>
+                        <p class="product-desc">Google Tensor G3, amazing AI-powered camera, and 7 years of software
+                            updates.</p>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="wishlist-box"><i class="fa-regular fa-heart"></i></div>
+                </div>
+
+                <!-- Product 4 - LAPTOP: MacBook Pro -->
+                <div class="product-card" data-name="MacBook Pro M3" data-category="laptop" data-price="1999"
+                    data-brand="apple">
+                    <div class="product-image">
+                        <img src="images/tech/laptop.jpg" alt="MacBook Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3>Apple MacBook Pro 14" - M3 Pro Chip, 512GB SSD</h3>
+                        <div class="price-row"><span class="new-price">$1999.00</span><span
+                                class="old-price">$2299.00</span></div>
+                        <div class="rating-row">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i></div>
+                            <span class="rating-value">9.5</span><span class="dot">•</span><span class="orders">654
+                                orders</span><span class="dot">•</span><span class="shipping">Free Shipping</span>
+                        </div>
+                        <p class="product-desc">Supercharged by M3 Pro chip, Liquid Retina XDR display, 18hr battery
+                            life.</p>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="wishlist-box"><i class="fa-regular fa-heart"></i></div>
+                </div>
+
+                <!-- Product 5 - WATCH: Apple Watch Series 9 -->
+                <div class="product-card" data-name="Apple Watch Series 9" data-category="watch" data-price="429"
+                    data-brand="apple">
+                    <div class="product-image">
+                        <img src="images/tech/watch.jpg" alt="Apple Watch">
+                    </div>
+                    <div class="product-info">
+                        <h3>Apple Watch Series 9 - GPS, 45mm Midnight</h3>
+                        <div class="price-row"><span class="new-price">$429.00</span><span
+                                class="old-price">$499.00</span></div>
+                        <div class="rating-row">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i></div>
+                            <span class="rating-value">9.0</span><span class="dot">•</span><span class="orders">1,872
+                                orders</span><span class="dot">•</span><span class="shipping">Free Shipping</span>
+                        </div>
+                        <p class="product-desc">S9 SIP, double tap gesture, brighter display, health and fitness
+                            tracking.</p>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="wishlist-box"><i class="fa-regular fa-heart"></i></div>
+                </div>
+
+                <!-- Product 6 - HEADPHONES: Sony WH-1000XM5 -->
+                <div class="product-card" data-name="Sony Headphones XM5" data-category="headphones" data-price="398"
+                    data-brand="sony">
+                    <div class="product-image">
+                        <img src="images/tech/headphone.jpg" alt="Sony Headphones">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sony WH-1000XM5 - Industry Leading Noise Cancellation</h3>
+                        <div class="price-row"><span class="new-price">$398.00</span><span
+                                class="old-price">$499.00</span></div>
+                        <div class="rating-row">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i></div>
+                            <span class="rating-value">9.4</span><span class="dot">•</span><span class="orders">3,210
+                                orders</span><span class="dot">•</span><span class="shipping">Free Shipping</span>
+                        </div>
+                        <p class="product-desc">Premium wireless headphones with 30hr battery, 4 mics for calls, and
+                            superb sound.</p>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="wishlist-box"><i class="fa-regular fa-heart"></i></div>
+                </div>
+
+                <!-- Product 7 - MOBILE: OnePlus 12 -->
+                <div class="product-card" data-name="OnePlus 12" data-category="mobile" data-price="799"
+                    data-brand="oneplus">
+                    <div class="product-image">
+                        <img src="images/tech/mobile4.jpg" alt="OnePlus Mobile">
+                    </div>
+                    <div class="product-info">
+                        <h3>OnePlus 12 - 16GB RAM, 512GB, Flowy Emerald</h3>
+                        <div class="price-row"><span class="new-price">$799.00</span><span
+                                class="old-price">$899.00</span></div>
+                        <div class="rating-row">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i></div>
+                            <span class="rating-value">8.8</span><span class="dot">•</span><span class="orders">1,567
+                                orders</span><span class="dot">•</span><span class="shipping">Free Shipping</span>
+                        </div>
+                        <p class="product-desc">Snapdragon 8 Gen 3, Hasselblad camera, 100W fast charging and 5400mAh
+                            battery.</p>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="wishlist-box"><i class="fa-regular fa-heart"></i></div>
+                </div>
+
+                <!-- Product 8 - LAPTOP: Dell XPS 15 -->
+                <div class="product-card" data-name="Dell XPS 15" data-category="laptop" data-price="1599"
+                    data-brand="dell">
+                    <div class="product-image">
+                        <img src="images/tech/laptop.jpg" alt="Dell Laptop">
+                    </div>
+                    <div class="product-info">
+                        <h3>Dell XPS 15 - Intel Core i9, 32GB RAM, 1TB SSD</h3>
+                        <div class="price-row"><span class="new-price">$1599.00</span><span
+                                class="old-price">$1899.00</span></div>
+                        <div class="rating-row">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-regular fa-star"></i></div>
+                            <span class="rating-value">8.5</span><span class="dot">•</span><span class="orders">432
+                                orders</span><span class="dot">•</span><span class="shipping">Free Shipping</span>
+                        </div>
+                        <p class="product-desc">15.6" 3.5K OLED, NVIDIA RTX 4060, perfect for creators and
+                            professionals.</p>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="wishlist-box"><i class="fa-regular fa-heart"></i></div>
+                </div>
+                <!-- Product 9 - MOBILE: Google Pixel 8 -->
+                <div class="product-card" data-name="Google Pixel 8" data-category="camera" data-price="699"
+                    data-brand="google">
+                    <div class="product-image">
+                        <img src="images/tech/camera.jpg" alt="Google Pixel 8">
+                    </div>
+                    <div class="product-info">
+                        <h3>Google Pixel 8 - 128GB, Hazel</h3>
+                        <div class="price-row"><span class="new-price">$699.00</span><span
+                                class="old-price">$799.00</span></div>
+                        <div class="rating-row">
+                            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i></div>
+                            <span class="rating-value">8.7</span><span class="dot">•</span><span class="orders">890
+                                orders</span><span class="dot">•</span><span class="shipping">Free Shipping</span>
+                        </div>
+                        <p class="product-desc">Google Tensor G3, amazing AI-powered camera, and 7 years of software
+                            updates.</p>
+                        <a href="#" class="view-details">View details</a>
+                    </div>
+                    <div class="wishlist-box"><i class="fa-regular fa-heart"></i></div>
+                </div>
+
+
+            </section>
+
+            <!-- Pagination Section -->
+            <div class="pagination" id="pagination">
+                <button class="page-btn active" onclick="showPage(1)">1</button>
+                <button class="page-btn" onclick="showPage(2)">2</button>
+                <button class="page-btn next-btn" onclick="nextPage()">Next</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SUBSCRIBE NEWSLETTER SECTION ======================== -->
+    <section class="subscribe-sec">
+        <h3>Subscribe on our newsletter</h3>
+        <p>Get daily news on upcoming offers from many suppliers all over the world</p>
+        <div class="mail">
+            <div class="email-box">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" placeholder="Email">
+            </div>
+            <button class="subscribe-btn">Subscribe</button>
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="logoo">
+                <img src="images/logo-colored.png" alt="Logo">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <div class="social-icons">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>
+            <div class="Ftr-colm">
+                <h4>About</h4>
+                <ul>
+                    <li>About Us</li>
+                    <li>Find store</li>
+                    <li>Categories</li>
+                    <li>Blogs</li>
+                </ul>
+            </div>
+            <div class="Ftr-colm">
+                <h4>Partnership</h4>
+                <ul>
+                    <li>About Us</li>
+                    <li>Find store</li>
+                    <li>Categories</li>
+                    <li>Blogs</li>
+                </ul>
+            </div>
+            <div class="Ftr-colm">
+                <h4>Information</h4>
+                <ul>
+                    <li>Help Center</li>
+                    <li>Money Refund</li>
+                    <li>Shipping</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+            <div class="Ftr-colm">
+                <h4>For Users</h4>
+                <ul>
+                    <li>Login</li>
+                    <li>Register</li>
+                    <li>Settings</li>
+                    <li>My Orders</li>
+                </ul>
+            </div>
+            <div class="Ftr-colm1">
+                <h4>Get App</h4>
+                <div class="app-images">
+                    <img src="images/type=Appstore.png" alt="App Store">
+                    <img src="images/type=Google Play.png" alt="Google Play">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Ecommerce.</p>
+            <div class="language">
+                <img src="images/Property 1=US.png" alt="US flag">
+                <span>English ^</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="javascript/script.js"></script>
+</body>
+
+</html>

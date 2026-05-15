@@ -1,0 +1,450 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main content area */
+.main-content {
+    flex: 1;
+}
+.breadcrumb{
+    padding: 20px 60px;
+    font-size: 14px;
+    color: gray;
+}
+.product-listing-page {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+    padding: 20px 60px;
+    background: #f7f7f7;
+    align-items: start;
+}
+
+/* Sidebar */
+.filter-sidebar {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.sidebar-filter label{
+    display:block;
+    margin-bottom:10px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.sidebar-filter input{
+    margin-right:8px;
+}
+.filter-box {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.filter-box h4 {
+    margin-bottom: 15px;
+}
+
+.filter-box label,
+.filter-box li {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Right side */
+.products-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* top bar */
+.product-top-bar {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* product card */
+/* Product Listing Section */
+.product-listing {
+    width: 100%;
+    padding: 0px;
+    background: transparent;
+}
+
+/* Product Card */
+.product-card {
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    position: relative;
+    transition: all 0.3s;
+}
+.product-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+.wishlist-box {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+    transition: 0.3s;
+}
+
+.wishlist-box.liked {
+    color: #e74c3c;
+    animation: heartBeat 0.3s;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1); }
+}
+
+/* Product Image */
+.product-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+/* Product Info */
+.product-info {
+    flex: 1;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+/* Price */
+.price-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.price-range{
+    display: flex;
+    gap: 5px;
+}
+.price-range input{
+    width: 70px;
+}
+
+.new-price {
+    font-size: 18px;
+}
+
+.old-price {
+    font-size: 14px;
+}
+
+.btn {
+  width: 100px;
+  height: 100%;
+  border: none;
+  background: #0d6efd;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+.add-to-cart-btn {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background: #0056d2;
+  transform: scale(1.05);
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.98);
+}
+
+/* Rating Row */
+.rating-row {
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+.stars i {
+    color: #ff9017;
+    font-size: 14px;
+}
+
+.rating-value {
+    color: #ff9017;
+    font-size: 14px;
+}
+
+.dot {
+    color: gray;
+}
+
+.orders {
+    color: #8b96a5;
+    font-size: 14px;
+}
+
+.shipping {
+    color: green;
+    font-size: 14px;
+}
+
+/* Description */
+.product-desc {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+/* View Details */
+.view-details {
+    color: #0d6efd;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+/* Wishlist Icon */
+.wishlist-box {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.wishlist-box i {
+    color: #0d6efd;
+    font-size: 18px;
+}
+
+/* Hover Effect */
+.product-card:hover {
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+}
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.page-btn:hover {
+    background: #0d6efd;
+    color: white;
+}
+
+.page-btn.active {
+    background: #0d6efd;
+    color: white;
+}
+
+
+/* Footer */
+.footer {
+    background: white;
+    border-top: 1px solid #ddd;
+}
+
+/* top section */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px 80px;
+}
+
+.logoo {
+    width: 250px;
+}
+
+.logoo img {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.logoo p {
+    color: gray;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* social icons */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-icons i {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* columns */
+.Ftr-colm,
+.Ftr-colm1 {
+    min-width: 150px;
+}
+
+.Ftr-colm ul {
+    padding: 0;
+}
+
+.Ftr-colm li {
+    list-style: none;
+    margin-bottom: 10px;
+    color: gray;
+}
+
+/* app buttons */
+.app-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.app-images img {
+    width: 120px;
+}
+
+/* bottom section */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    border-top: 1px solid #ddd;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language img {
+    width: 25px;
+}
+/* ++++++++++++++++++  Subscribe    +++++++++++++++++ */
+.subscribe-sec{
+    background: #eff2f4;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.subscribe-sec h3{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.subscribe-sec p{
+    color: gray;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* input + button same row */
+.mail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* email input box */
+.email-box{
+    position: relative;
+    width: 280px;
+}
+
+.email-box i{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    font-size: 14px;
+}
+
+.email-box input{
+    width: 100%;
+    height: 40px;
+    padding-left: 35px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+/* subscribe button */
+.subscribe-btn{
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.subscribe-btn:hover{
+    background: #0056d2;
+}

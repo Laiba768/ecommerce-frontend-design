@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Cart</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/cart.css">
+    <link rel="stylesheet" href="CSS/home-page.css">
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="cart-navbar">
+
+        <!-- Logo -->
+        <div class="logo">
+            <h2 onclick="window.location.href='Home-page.html'">
+                <i class="fa-solid fa-bag-shopping"></i> Brand
+            </h2>
+        </div>
+
+        <!-- Icons -->
+        <div class="nav-icons">
+
+            <div class="nav-icon-box">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </div>
+
+            <div class="nav-icon-box">
+                <i class="fa-solid fa-message"></i>
+                <span>Message</span>
+            </div>
+
+            <div class="nav-icon-box">
+                <i class="fa-solid fa-heart"></i>
+                <span>Orders</span>
+            </div>
+
+            <div class="nav-icon-box">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>My Cart</span>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="cart-page">
+
+        <!-- LEFT -->
+        <div class="cart-left">
+
+            <h2>My Cart (<span id="cart-count">0</span>)</h2>
+
+            <div id="cart-items-list"></div>
+
+            <button class="back-btn" onclick="window.location.href='product-listing-page.html'">← Back to shop</button>
+        </div>
+
+
+        <!-- RIGHT -->
+        <div class="cart-right">
+
+            <div class="coupon-box">
+                <p>Have a coupon?</p>
+                <input type="text" placeholder="Add coupon">
+                <button>Apply</button>
+            </div>
+
+            <div class="summary-box">
+                <p>Subtotal: <span id="subtotal">$0</span></p>
+                <p>Discount: <span class="red">-$60</span></p>
+                <p>Tax: <span class="green" id="tax">$0</span></p>
+
+                <hr>
+
+                <h3>Total: <span id="total-price">$0</span></h3>
+
+                <button id="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- services -->
+    <div class="services">
+        <div>🔒 Secure payment</div>
+        <div>💬 Customer support</div>
+        <div>🚚 Free delivery</div>
+    </div>
+
+
+    <!-- saved products -->
+    <div class="saved-section">
+        <h3>Saved for later</h3>
+
+        <div class="saved-products">
+            <div class="saved-card">
+                <img src="images/tech/mobile.jpg">
+                <p>$99.50</p>
+                <button>Move to cart</button>
+            </div>
+
+            <div class="saved-card">
+                <img src="images/tech/watch.jpg">
+                <p>$99.50</p>
+                <button>Move to cart</button>
+            </div>
+
+            <div class="saved-card">
+                <img src="images/tech/laptop.jpg">
+                <p>$99.50</p>
+                <button>Move to cart</button>
+            </div>
+
+            <div class="saved-card">
+                <img src="images/tech/camera.jpg">
+                <p>$99.50</p>
+                <button>Move to cart</button>
+            </div>
+            <div class="saved-card">
+                <img src="images/tech/headphone.jpg">
+                <p>$99.50</p>
+                <button>Move to cart</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- discount banner -->
+    <div class="discount-banner">
+        <div>
+            <h3>Super discount on more than 100 USD</h3>
+            <p>Have you ever finally just write dummy info</p>
+        </div>
+
+        <button>Shop now</button>
+    </div>
+
+    <footer class="ftr">
+        <div class="logoo">
+            <img src="images/logo-colored.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, unde!</p>
+            <div class="social-icons">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+
+        </div>
+        <div class="Ftr-colm">
+            <h4>About</h4>
+            <ul>
+                <li>About Us</li>
+                <li>Find store</li>
+                <li>Categories</li>
+                <li>Blogs</li>
+            </ul>
+        </div>
+        <div class="Ftr-colm">
+            <h4>Paternship</h4>
+            <ul>
+                <li>About Us</li>
+                <li>Find store</li>
+                <li>Categories</li>
+                <li>Blogs</li>
+            </ul>
+        </div>
+        <div class="Ftr-colm">
+            <h4>Information</h4>
+            <ul>
+                <li>Help Center</li>
+                <li>Money Refund</li>
+                <li>Shipping</li>
+                <li>Contact Us</li>
+            </ul>
+        </div>
+        <div class="Ftr-colm">
+            <h4>For Users</h4>
+            <ul>
+                <li>Logins</li>
+                <li>Registers</li>
+                <li>Settings</li>
+                <li>My Orders</li>
+            </ul>
+        </div>
+        <div class="Ftr-colm1">
+            <h4>Get App</h4>
+            <div class="app-images">
+                <img src="images/type=Appstore.png" alt="">
+                <img src="images/type=Google Play.png" alt="">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="text">
+                <p>© 2023 Ecommerce.</p>
+            </div>
+
+            <div class="language">
+                <img src="images/Property 1=US.png" alt="flag">
+                <span>English ^</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="javascript/cart.js"></script>
+    <script src="javascript/product-details.js"></script>
+</body>
+
+</html>
